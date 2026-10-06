@@ -15,8 +15,8 @@ import {
 } from "lucide-react";
 
 export default function SettingsPage() {
-  const [apiKey, setApiKey] = useState("sk_test_51Mz99demoKeySampleChurnShield");
-  const [webhookSecret, setWebhookSecret] = useState("whsec_demoSampleWebhookSecret4910");
+  const [apiKey, setApiKey] = useState("");
+  const [webhookSecret, setWebhookSecret] = useState("");
   const [copied, setCopied] = useState(false);
   const [saved, setSaved] = useState(false);
   const [testResult, setTestResult] = useState<string | null>(null);
@@ -69,7 +69,7 @@ export default function SettingsPage() {
                 type="password"
                 value={apiKey}
                 onChange={(e) => setApiKey(e.target.value)}
-                placeholder="sk_live_... or sk_test_..."
+                placeholder="Enter Stripe Secret Key"
                 className="w-full rounded-xl border border-white/15 bg-black/60 p-3 text-xs font-mono text-white focus:border-emerald-400 focus:outline-none"
               />
               <p className="text-[10px] text-white/40">
@@ -83,7 +83,7 @@ export default function SettingsPage() {
                 type="password"
                 value={webhookSecret}
                 onChange={(e) => setWebhookSecret(e.target.value)}
-                placeholder="whsec_..."
+                placeholder="Enter Stripe Webhook Signing Secret"
                 className="w-full rounded-xl border border-white/15 bg-black/60 p-3 text-xs font-mono text-white focus:border-emerald-400 focus:outline-none"
               />
               <p className="text-[10px] text-white/40">
